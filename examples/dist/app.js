@@ -229,6 +229,7 @@ var SelectedValuesFieldCreate = React.createClass({
 	onLabelClick: function onLabelClick(data, event) {
 		console.log(data, event);
 	},
+<<<<<<< HEAD
 	render: function render() {
 		var ops = [{ label: 'First Option', value: 'first' }, { label: 'Second Option', value: 'second' }, { label: 'Third Option', value: 'third' }];
 		return React.createElement(
@@ -276,6 +277,11 @@ var CustomRenderField = React.createClass({
 	},
 	render: function render() {
 		var ops = [{ label: 'Red', value: 'red', hex: '#EC6230' }, { label: 'Green', value: 'green', hex: '#4ED84E' }, { label: 'Blue', value: 'blue', hex: '#6D97E2' }];
+=======
+
+	render: function render() {
+		var ops = [{ label: 'Chocolate', value: 'chocolate' }, { label: 'Vanilla', value: 'vanilla' }, { label: 'Strawberry', value: 'strawberry' }, { label: 'Caramel', value: 'caramel' }, { label: 'Cookies and Cream', value: 'cookiescream' }, { label: 'Peppermint', value: 'peppermint' }];
+>>>>>>> Close the dropdown menu after clicking on it
 		return React.createElement(
 			'div',
 			null,
@@ -285,13 +291,21 @@ var CustomRenderField = React.createClass({
 				this.props.label
 			),
 			React.createElement(Select, {
+<<<<<<< HEAD
+=======
+				onOptionLabelClick: this.onLabelClick,
+				value: 'chocolate,vanilla,strawberry',
+>>>>>>> Close the dropdown menu after clicking on it
 				delimiter: ',',
 				multi: true,
 				allowCreate: true,
 				placeholder: 'Select your favourite(s)',
 				options: ops,
+<<<<<<< HEAD
 				optionRenderer: this.renderOption,
 				valueRenderer: this.renderValue,
+=======
+>>>>>>> Close the dropdown menu after clicking on it
 				onChange: logChange })
 		);
 	}
@@ -304,8 +318,12 @@ React.render(React.createElement(
 	React.createElement(StatesField, { label: 'States (non-searchable):', searchable: false }),
 	React.createElement(MultiSelectField, { label: 'Multiselect:' }),
 	React.createElement(SelectedValuesField, { label: 'Clickable labels (labels as links):' }),
+<<<<<<< HEAD
 	React.createElement(SelectedValuesFieldCreate, { label: 'Option Creation (tags mode):' }),
 	React.createElement(CustomRenderField, { label: 'Custom rendering for options and values:' }),
+=======
+	React.createElement(SelectedValuesFieldCreate, { label: 'Clickable labels + Creation(labels as links):' }),
+>>>>>>> Close the dropdown menu after clicking on it
 	React.createElement(RemoteSelectField, { label: 'Remote Options:' })
 ), document.getElementById('example'));
 

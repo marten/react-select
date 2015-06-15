@@ -43,7 +43,17 @@ var Select = React.createClass({
 		searchable: React.PropTypes.bool,          // whether to enable searching feature or not
 		searchPromptText: React.PropTypes.string,  // label to prompt for search input
 		value: React.PropTypes.any,                // initial field value
-		valueRenderer: React.PropTypes.func        // valueRenderer: function(option) {}
+		valueRenderer: React.PropTypes.func,       // valueRenderer: function(option) {}
+		allowCreate: React.PropTypes.bool,         // whether to allow creation of new entries
+		closeAfterClick: React.PropTypes.bool,     // whether close the menu after an option is clicked
+		/*
+		* Allow user to make option label clickable. When this handler is defined we should
+		* wrap label into <a>label</a> tag.
+		*
+		* onOptionLabelClick handler: function (value, event) {}
+		*
+		*/
+		onOptionLabelClick: React.PropTypes.func
 	},
 
 	getDefaultProps: function() {
@@ -70,7 +80,10 @@ var Select = React.createClass({
 			placeholder: 'Select...',
 			searchable: true,
 			searchPromptText: 'Type to search',
-			value: undefined
+			value: undefined,
+			allowCreate: false,
+			closeAfterClick: false,
+			onOptionLabelClick: undefined
 		};
 	},
 
@@ -255,7 +268,11 @@ var Select = React.createClass({
 		this.setState(newState);
 	},
 
-	selectValue: function(value) {
+	selectValue: function(value, event) {
+    if (this.props.closeAfterClick) {
+		  event.stopPropagation();
+		  event.preventDefault();
+    }
 		if (!this.props.multi) {
 			this.setValue(value);
 		} else if (value) {

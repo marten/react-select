@@ -30,6 +30,7 @@
     "sinon-chai": "^2.8.0"
   },
   "peerDependencies": {
+    "lessify": "^1.0.1",
     "react": ">=0.13.3"
   },
   "browserify-shim": {

@@ -19633,13 +19633,22 @@ module.exports = warning;
 		return classes.substr(1);
 	}
 
+<<<<<<< HEAD
 	if (typeof module !== 'undefined' && module.exports) {
 		module.exports = classNames;
 	} else if (typeof define === 'function' && typeof define.amd === 'object' && define.amd){
+=======
+	if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
+>>>>>>> Close the dropdown menu after clicking on it
 		// AMD. Register as an anonymous module.
 		define(function () {
 			return classNames;
 		});
+<<<<<<< HEAD
+=======
+	} else if (typeof module !== 'undefined' && module.exports) {
+		module.exports = classNames;
+>>>>>>> Close the dropdown menu after clicking on it
 	} else {
 		window.classNames = classNames;
 	}
@@ -19729,7 +19738,11 @@ var AutosizeInput = React.createClass({
 		React.findDOMNode(this.refs.input).select();
 	},
 	render: function render() {
+<<<<<<< HEAD
 		var escapedValue = (this.props.value || '').replace(/\&/g, '&amp;').replace(/ /g, '&nbsp;').replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
+=======
+		var escapedValue = (this.props.value || '').replace(/ /g, '&nbsp;').replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
+>>>>>>> Close the dropdown menu after clicking on it
 		var wrapperStyle = this.props.style || {};
 		wrapperStyle.display = 'inline-block';
 		var inputStyle = this.props.inputStyle || {};
