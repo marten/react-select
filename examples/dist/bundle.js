@@ -8,19 +8,12 @@ var Value = React.createClass({
 	displayName: 'Value',
 
 	propTypes: {
-<<<<<<< HEAD
 		disabled: React.PropTypes.bool,
 		onOptionLabelClick: React.PropTypes.func,
 		onRemove: React.PropTypes.func,
 		option: React.PropTypes.object.isRequired,
 		optionLabelClick: React.PropTypes.bool,
 		renderer: React.PropTypes.func
-=======
-		label: React.PropTypes.string.isRequired,
-		onOptionLabelClick: React.PropTypes.func,
-		onRemove: React.PropTypes.func,
-		optionLabelClick: React.PropTypes.bool
->>>>>>> Close the dropdown menu after clicking on it
 	},
 
 	blockEvent: function blockEvent(event) {
@@ -109,7 +102,6 @@ var Select = React.createClass({
 		inputProps: React.PropTypes.object, // custom attributes for the Input (in the Select-control) e.g: {'data-foo': 'bar'}
 		matchPos: React.PropTypes.string, // (any|start) match the start or entire string when filtering
 		matchProp: React.PropTypes.string, // (any|label|value) which option property to filter on
-<<<<<<< HEAD
 		multi: React.PropTypes.bool, // multi-value input
 		name: React.PropTypes.string, // field name, for hidden <input /> tag
 		addLabelText: React.PropTypes.string, // placeholder displayed when you want to add a label on a multi-value input
@@ -124,10 +116,7 @@ var Select = React.createClass({
 		searchable: React.PropTypes.bool, // whether to enable searching feature or not
 		searchPromptText: React.PropTypes.string, // label to prompt for search input
 		value: React.PropTypes.any, // initial field value
-		valueRenderer: React.PropTypes.func // valueRenderer: function(option) {}
-=======
-		ignoreCase: React.PropTypes.bool, // whether to perform case-insensitive filtering
-		inputProps: React.PropTypes.object, // custom attributes for the Input (in the Select-control) e.g: {'data-foo': 'bar'}
+		valueRenderer: React.PropTypes.func, // valueRenderer: function(option) {}
 		allowCreate: React.PropTypes.bool, // whether to allow creation of new entries
 		closeAfterClick: React.PropTypes.bool, // whether close the menu after an option is clicked
 		/*
@@ -138,7 +127,6 @@ var Select = React.createClass({
   *
   */
 		onOptionLabelClick: React.PropTypes.func
->>>>>>> Close the dropdown menu after clicking on it
 	},
 
 	getDefaultProps: function getDefaultProps() {
@@ -156,7 +144,6 @@ var Select = React.createClass({
 			inputProps: {},
 			matchPos: 'any',
 			matchProp: 'any',
-<<<<<<< HEAD
 			name: undefined,
 			addLabelText: 'Add {label} ?',
 			noResultsText: 'No results found',
@@ -166,15 +153,10 @@ var Select = React.createClass({
 			placeholder: 'Select...',
 			searchable: true,
 			searchPromptText: 'Type to search',
-			value: undefined
-=======
-			ignoreCase: true,
-			inputProps: {},
+			value: undefined,
 			allowCreate: false,
 			closeAfterClick: false,
-
 			onOptionLabelClick: undefined
->>>>>>> Close the dropdown menu after clicking on it
 		};
 	},
 
@@ -235,7 +217,6 @@ var Select = React.createClass({
 			}
 		};
 
-<<<<<<< HEAD
 		this.setState(this.getStateFromValue(this.props.value));
 	},
 
@@ -243,14 +224,6 @@ var Select = React.createClass({
 		if (this.props.asyncOptions && this.props.autoload) {
 			this.autoloadAsyncOptions();
 		}
-=======
-		this.setState(this.getStateFromValue(this.props.value), function () {
-			//Executes after state change is done. Fixes issue #201
-			if (this.props.asyncOptions && this.props.autoload) {
-				this.autoloadAsyncOptions();
-			}
-		});
->>>>>>> Close the dropdown menu after clicking on it
 	},
 
 	componentWillUnmount: function componentWillUnmount() {
@@ -794,7 +767,6 @@ var Select = React.createClass({
 			var mouseDown = this.selectValue.bind(this, op);
 			var renderedLabel = renderLabel(op);
 
-<<<<<<< HEAD
 			return op.disabled ? React.createElement(
 				'div',
 				{ ref: ref, key: 'option-' + op.value, className: optionClass },
@@ -804,21 +776,6 @@ var Select = React.createClass({
 				{ ref: ref, key: 'option-' + op.value, className: optionClass, onMouseEnter: mouseEnter, onMouseLeave: mouseLeave, onMouseDown: mouseDown, onClick: mouseDown },
 				op.create ? this.props.addLabelText.replace('{label}', op.label) : renderedLabel
 			);
-=======
-			if (op.disabled) {
-				return React.createElement(
-					'div',
-					{ ref: ref, key: 'option-' + op.value, className: optionClass },
-					op.label
-				);
-			} else {
-				return React.createElement(
-					'div',
-					{ ref: ref, key: 'option-' + op.value, className: optionClass, onMouseEnter: mouseEnter, onMouseLeave: mouseLeave, onMouseDown: mouseDown, onClick: mouseDown },
-					op.create ? 'Add ' + op.label + ' ?' : op.label
-				);
-			}
->>>>>>> Close the dropdown menu after clicking on it
 		}, this);
 
 		return ops.length ? ops : React.createElement(
