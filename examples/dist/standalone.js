@@ -41,6 +41,7 @@ var Select = React.createClass({
 		onBlur: React.PropTypes.func, // onBlur handler: function(event) {}
 		onChange: React.PropTypes.func, // onChange handler: function(newValue) {}
 		onFocus: React.PropTypes.func, // onFocus handler: function(event) {}
+		onInputChange: React.PropTypes.func, // onFocus handler: function(event) {}
 		onOptionLabelClick: React.PropTypes.func, // onCLick handler for value labels: function (value, event) {}
 		optionRenderer: React.PropTypes.func, // optionRenderer: function(option) {}
 		options: React.PropTypes.array, // array of options
@@ -496,6 +497,9 @@ var Select = React.createClass({
 				filteredOptions: filteredOptions,
 				focusedOption: this._getNewFocusedOption(filteredOptions)
 			}, this._bindCloseMenuIfClickedOutside);
+		}
+		if (this.props.onInputChange) {
+			this.props.onInputChange(event);
 		}
 	},
 
