@@ -45,7 +45,6 @@ var Select = React.createClass({
 		searchPromptText: React.PropTypes.string,  // label to prompt for search input
 		value: React.PropTypes.any,                // initial field value
 		valueRenderer: React.PropTypes.func,       // valueRenderer: function(option) {}
-		allowCreate: React.PropTypes.bool,         // whether to allow creation of new entries
 		closeAfterClick: React.PropTypes.bool,     // whether close the menu after an option is clicked
 		/*
 		* Allow user to make option label clickable. When this handler is defined we should
@@ -82,7 +81,6 @@ var Select = React.createClass({
 			searchable: true,
 			searchPromptText: 'Type to search',
 			value: undefined,
-			allowCreate: false,
 			closeAfterClick: false,
 			onOptionLabelClick: undefined
 		};
