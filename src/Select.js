@@ -82,7 +82,6 @@ var Select = React.createClass({
 			searchPromptText: 'Type to search',
 			value: undefined,
 			closeAfterClick: false,
-			onOptionLabelClick: undefined
 		};
 	},
 
