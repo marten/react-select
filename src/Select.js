@@ -53,7 +53,6 @@ var Select = React.createClass({
 		* onOptionLabelClick handler: function (value, event) {}
 		*
 		*/
-		onOptionLabelClick: React.PropTypes.func
 	},
 
 	getDefaultProps: function() {
