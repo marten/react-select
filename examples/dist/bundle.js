@@ -118,17 +118,7 @@ var Select = React.createClass({
 		searchPromptText: React.PropTypes.string, // label to prompt for search input
 		value: React.PropTypes.any, // initial field value
 		valueRenderer: React.PropTypes.func, // valueRenderer: function(option) {}
-		allowCreate: React.PropTypes.bool, // whether to allow creation of new entries
-		closeAfterClick: React.PropTypes.bool, // whether close the menu after an option is clicked
-		/*
-  * Allow user to make option label clickable. When this handler is defined we should
-  * wrap label into <a>label</a> tag.
-  *
-  * onOptionLabelClick handler: function (value, event) {}
-  *
-  */
-		onOptionLabelClick: React.PropTypes.func
-	},
+		closeAfterClick: React.PropTypes.bool },
 
 	getDefaultProps: function getDefaultProps() {
 		return {
@@ -155,9 +145,7 @@ var Select = React.createClass({
 			searchable: true,
 			searchPromptText: 'Type to search',
 			value: undefined,
-			allowCreate: false,
-			closeAfterClick: false,
-			onOptionLabelClick: undefined
+			closeAfterClick: false
 		};
 	},
 
@@ -906,5 +894,13 @@ var Select = React.createClass({
 });
 
 module.exports = Select;
+// whether close the menu after an option is clicked
+/*
+* Allow user to make option label clickable. When this handler is defined we should
+* wrap label into <a>label</a> tag.
+*
+* onOptionLabelClick handler: function (value, event) {}
+*
+*/
 
 },{"./Value":1,"classnames":undefined,"react":undefined,"react-input-autosize":undefined}]},{},[]);
